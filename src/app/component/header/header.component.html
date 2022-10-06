@@ -1,0 +1,150 @@
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Inventory Management System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="product">Product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Add Category <i class="fa-solid fa-plus"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <form style="width: 20rem; padding: 2rem ;" #f2="ngForm" (ngSubmit)="addcategory(f2)">
+                            <!-- <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Id</label>
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="emailHelp" name="id" [(ngModel)]="addcategorylist.id">
+                            </div> -->
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Name of Category</label>
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="emailHelp" name="Category" [(ngModel)]="addCategory.category">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputSubcategory" class="form-label">Name Subcategory</label>
+                                <input type="text" class="form-control" id="exampleInputSubcategory" name="SubCategory" [(ngModel)]="addCategory.subCategory">
+                            </div>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Delete Category <i class="fa-solid fa-plus"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <form style="width: 20rem; padding: 2rem ;" #f3="ngForm" (ngSubmit)="Deletecategory(f3)">
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Id</label>
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="emailHelp" name="id" [(ngModel)]="addcategorylist.id">
+                            </div>
+                            <!-- <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Name of Category</label>
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="emailHelp" name="Category" [(ngModel)]="addcategorylist.category">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputSubcategory" class="form-label">Name Subcategory</label>
+                                <input type="text" class="form-control" id="exampleInputSubcategory" name="SubCategory" [(ngModel)]="addcategorylist.subCategory">
+                            </div> -->
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </li>
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Add Product <i class="fa-solid fa-plus"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <form style="width: 20rem; padding: 2rem ;" #f="ngForm" (ngSubmit)="addproduct(f)">
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Name of Product</label>
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="emailHelp" name="name" [(ngModel)]="addProduct.name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Discription</label>
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="emailHelp" name="discription" [(ngModel)]="addProduct.discription">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Name of Category</label>
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="emailHelp" name="category" [(ngModel)]="addProduct.category">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputSubcategory" class="form-label">Name Subcategory</label>
+                                <input type="text" class="form-control" id="exampleInputSubcategory" name="subcategory" [(ngModel)]="addProduct.subcategory">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Offer Title</label>
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="emailHelp" name="offer_title" [(ngModel)]="addProduct.offer_title">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Discount</label>
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="emailHelp" name="discount" [(ngModel)]="addProduct.discount">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Prise</label>
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="emailHelp" name="price" [(ngModel)]="addProduct.price">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Quntity</label>
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="emailHelp" name="quntity" [(ngModel)]="addProduct.quntity">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Image Resorse</label>
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="emailHelp" name="img_url" [(ngModel)]="addProduct.img_url">
+                            </div>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Delete Product <i class="fa-solid fa-plus"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <form style="width: 20rem; padding: 2rem ;">
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Name of Product</label>
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputtext" class="form-label">Name of Category</label>
+                                <input type="text" class="form-control" id="exampleInputtext"
+                                    aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputSubcategory" class="form-label">Name Subcategory</label>
+                                <input type="text" class="form-control" id="exampleInputSubcategory">
+                            </div>
+                            <button type="submit" class="btn btn-danger">Submit</button>
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

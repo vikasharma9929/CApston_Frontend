@@ -1,0 +1,13 @@
+<p>all-product works!</p>
+<div class="card categroy" style="width: 18rem;" *ngFor="let Product of addProductList">
+    <img src="https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s22-5g.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Category: {{Product.name}}</h5>
+      <p class="card-text">Subcategory: {{Product.discription}}</p>
+      <p class="card-text">Subcategory: {{Product.price}}</p>
+    </div>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
